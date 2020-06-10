@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Accelerated Machine Learning with RAPIDS</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,8 +16,77 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<!-- Title Slide -->
+				<section data-background-image=/assets/imgs/opening_bg.png>
+					<img width=300 src=/assets/imgs/RAPIDS_txt.png> <br>
+					<strong>Accelerating Machine Learning with GPUs</strong>
+					<p></p>
+					<p style="font-size:30px">Akshit Arora - Data Scientist</small>
+				</section>
+
+				<!-- What is ML? -->
+				<section>
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<img width="700" src="/assets/imgs/m_1_ml_xkcd.png">
+						<p style="font-size:10px"><a href="https://twitter.com/kareem_carr/status/1122205223114686464">@quaesita</a></p>
+					</section>
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<img width="700" src="/assets/imgs/m_3_mlsup.png">
+						<p style="font-size:10px"><a href="https://towardsdatascience.com/supervised-vs-unsupervised-learning-14f68e32ea8d">Supervised vs Unsupervised Learning</a></p>
+					</section>
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<img width="700" src="/assets/imgs/m_2_mlunsup.png">
+						<p style="font-size:10px"><a href="https://towardsdatascience.com/supervised-vs-unsupervised-learning-14f68e32ea8d">Supervised vs Unsupervised Learning</a></p>
+					</section>
+				</section>
+
+				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+					<p style="font-size:50px;color: #7306ff;">Machine Learning Lifecycle</p>
+					<img width="700" src="/assets/imgs/m_4_mll.png">
+				</section>
+				
+				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+					<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+					<script src="https://gist.github.com/vishalmehta1991/1ba4a1ea0aa8a0af451be4f67f616d31.js"></script>
+					<p style="font-size:10px"><a href="https://medium.com/rapids-ai/accelerating-random-forests-up-to-45x-using-cuml-dfb782a31bea">Accelerating Random Forests up to 45x using cuML</a></p>
+				</section>
+
+				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+						<p style="font-size:25px;color: black;">Sub-sampled dataset 1 / 3</p>
+						<script src="https://gist.github.com/vishalmehta1991/24141dadfe2e3ae5608c4e771ca7c933.js"></script>
+					</section>
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+						<p style="font-size:25px;color: black;">Sub-sampled dataset 2 / 3</p>
+						<script src="https://gist.github.com/vishalmehta1991/93012fd401cd7c8f50445708eec087db.js"></script>
+					</section>
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+						<p style="font-size:25px;color: black;">Sub-sampled dataset 3 / 3</p>
+						<script src="https://gist.github.com/vishalmehta1991/bdd858a23720d9b29f195f4957526163.js"></script>
+					</section>
+				</section>
+
+				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+					<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+					<p style="font-size:25px;color: black;">Independent Decision Trees</p>
+					<img width="1000" src="/assets/imgs/ml_5_randomForests1.png">
+					<p style="font-size:10px"><a href="https://medium.com/rapids-ai/accelerating-random-forests-up-to-45x-using-cuml-dfb782a31bea">Accelerating Random Forests up to 45x using cuML</a></p>
+				</section>
+				
+				<section data-markdown data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+					<script type="text/template">
+					  Main Content
+					</script>
+				</section>
+			
+				<section data-markdown data-background-image="assets/imgs/closing_bg.png">
+					<script type="text/template">
+					  The End
+					</script>
+				</section>
 			</div>
 		</div>
 
