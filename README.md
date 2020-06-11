@@ -2,7 +2,7 @@
 
 # Accelerated Machine Learning with RAPIDS
 
-Please find the presentation [here](https://AcceleratedMLwRAPIDS.github.io). RAPIDS homepage: [rapids.ai](https://rapids.ai/).
+Please find the presentation [here](https://aroraakshit.github.io/AcceleratedMLwRAPIDS/#/). RAPIDS homepage: [rapids.ai](https://rapids.ai/).
 
 ## Suggested Reading
 
