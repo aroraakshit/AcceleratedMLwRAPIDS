@@ -1,4 +1,4 @@
-![RAPIDS Logo](presentation/assets/imgs/rapids_logo.png) 
+![RAPIDS Logo](rapids_logo.png) 
 
 # Accelerated Machine Learning with RAPIDS
 
