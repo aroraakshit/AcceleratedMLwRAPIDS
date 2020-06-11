@@ -24,7 +24,7 @@
 					<p style="font-size:30px">Akshit Arora - Data Scientist</small>
 				</section>
 
-				<!-- What is ML? -->
+				<!-- What is ML? - Supervised & Unsupervised -->
 				<section>
 					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 						<img width="700" src="/assets/imgs/m_1_ml_xkcd.png">
@@ -40,13 +40,17 @@
 					</section>
 				</section>
 
+				<!-- ML Lifecycle / Table of Contents -->
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">Machine Learning Lifecycle</p>
+					<p style="font-size:25px;color: black;">Also, Table of Contents</p>
 					<img width="700" src="/assets/imgs/m_4_mll.png">
 				</section>
 				
+				<!-- Random Forests - Datasets -->
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+					<p style="font-size:25px;color: black;">Example Dataset</p>
 					<script src="https://gist.github.com/vishalmehta1991/1ba4a1ea0aa8a0af451be4f67f616d31.js"></script>
 					<p style="font-size:10px"><a href="https://medium.com/rapids-ai/accelerating-random-forests-up-to-45x-using-cuml-dfb782a31bea">Accelerating Random Forests up to 45x using cuML</a></p>
 				</section>
@@ -69,16 +73,213 @@
 					</section>
 				</section>
 
+				<section>
+					<!-- Random Forests - building a decision tree -->
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+						<p style="font-size:25px;color: black;">Building a decision tree</p>
+						<ol style="font-size:20px;color: black;">
+							<li class="fragment">
+								Finding the best particular split at a particular node involves two choices:
+								<ol style="font-size:18px;color: black;">
+									<li>the feature</li>
+									<li>the split value for that feature</li>
+								</ol>
+								that will result in the <b>"highest improvement"</b> to the model.
+							</li>
+							<br>
+							<li class="fragment">
+								At each node, the algorithm uses a specified metric to estimate how much a potential split will improve the model.
+								<ul style="font-size:18px;color: black;">
+									<li>Classification task: <b>Gini Impurity</b> or Entropy.</li>
+									<li>Regresion task: Mean Squared Error (MSE) or Mean Absolute Error (MAE)</li>
+								</ul>
+							</li>
+							<br>
+							<li class="fragment">Continue splitting the nodes until either:
+								<ol style="font-size:18px;color: black;">
+									<li>all values in the subset mapping to that node are pure (e.g. all fruits are strawberries)</li>
+									OR
+									<li>some other conditions are met (e.g. max tree depth, max number of samples per tree etc.)</li>
+								</ol>
+							</li>
+						</ol>
+					</section>
+					<!-- Random Forests - backup slides for algorithmic details -->
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+						<p style="font-size:25px;color: black;">Measuring "Highest Improvement" at a split</p>
+						<p style="font-size:20px;color: black;">A potential split S, defined by (feature split_value), will split this node’s dataset of ‘N’ rows into left and right subsets with N_left and N_right rows respectively. The improvement of Split S is computed as:</p>
+						<p style="font-size:20px;color: black;font-style: italic;">improvement = Gini<sup> PARENT</sup> - impurity</p>
+						<p style="font-size:20px;color: black;">where impurity is:</p>
+						<p style="font-size:20px;color: black;font-style: italic;">impurity = N_left / N * Gini<sup> Left</sup> + N_right / N * Gini<sup> Right</sup></p>
+					</section>
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+						<p style="font-size:25px;color: black;">What is Gini Impurity?</p>
+						<img width="600" src="/assets/imgs/ml_6_randomForests.png">
+						<img width="500" src="/assets/imgs/ml_7_gini_formula.png">
+						<p style="font-size:10px"><a href="https://medium.com/rapids-ai/accelerating-random-forests-up-to-45x-using-cuml-dfb782a31bea">EE596 by Linda Shapiro, CS@University of Washington</a></p>
+					</section>
+				</section>
+
+				<!-- Random Forests - Independent Decision Trees -->
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">Random Forests</p>
 					<p style="font-size:25px;color: black;">Independent Decision Trees</p>
 					<img width="1000" src="/assets/imgs/ml_5_randomForests1.png">
 					<p style="font-size:10px"><a href="https://medium.com/rapids-ai/accelerating-random-forests-up-to-45x-using-cuml-dfb782a31bea">Accelerating Random Forests up to 45x using cuML</a></p>
 				</section>
+
+				<!-- Random Forests - sklearn implementation -->
+				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+					<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+					<p style="font-size:25px;color: black;">sklearn implementation</p>
+					<pre style="width: 1000px"><code class="language-python" style="word-wrap:normal" data-line-numbers="1-3|5-9|11-12|14-15" data-trim>
+from sklearn.ensemble import RandomForestClassifier as sklRF
+from sklearn.metrics import accuracy_scores
+import multiprocessing as mp
+
+skl_rf_params = {
+	'n_estimators': 25,
+	'max_depth': 13,
+	'n_jobs': mp.cpu_count()
+}
+
+skl_rf = sklRF(**skl_rf_params)
+skl_rf.fit(X_train, y_train)
+
+y_pred = skl_rf.predict(X_test)
+print("sklearn RF Accuracy Score: ", accuracy_score(y_pred, y_test))
+
+					</code>
+					</pre>
+				</section>
+
+				<section>
+					<!-- Random Forests - Acceleration Opportunities -->
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+						<p style="font-size:25px;color: black;">Acceleration opportunities</p>
+						<ol style="font-size:20px;color: black;">
+							<li class="fragment">Independent decision tree development. Several trees can be built in parallel on a single GPU.</li>
+							<br>
+							<li class="fragment">Breadth-first approach, as opposed to depth-first. Building a full layer of the tree at a time.</li>
+							<br>
+							<li class="fragment">High performance split algorithms to select which values are explored for each feature+node combination.</li>
+						</ol>
+					</section>
+					<!-- Random Forests - Split Algorithm details, backup -->
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+						<p style="font-size:25px;color: black;">Split Algorithm - Min/Max histograms</p>
+						<ul style="font-size:20px;color: black;">
+							<li>A histogram is built for every feature for a tree node. Every feature’s data range [min, max] is split into n_bins equally sized bins. The end range of each bin is considered as a potential split value. </li>
+							<br>
+							<li>With this approach, the split values for each feature are recomputed at each node, thus adapting to the data ranges at each tree node. </li>
+							<br>
+							<li>The min/max algorithm also helps in isolating outliers in the data at an early stage during the tree building process.</li>
+						</ul>
+					</section>
+					<!-- Random Forests - Split Algorithm details, backup -->
+					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+						<p style="font-size:25px;color: black;">Split Algorithm - Quantiles</p>
+						<ul style="font-size:20px;color: black;">
+							<li>The quantiles split algorithm precomputes the potential split values for each feature once per tree, i.e., at the root node. Each feature (column) is sorted in ascending order, and split into n_bins such that each bin contains an equal portion of the root node’s dataset. The end range of each bin is considered as a potential split value. 
+							</li>
+							<br>
+							<li>Thus, unlike min/max histograms where all bins have the same width, in quantiles all bins, except for the last one, have the same height for the root note, but are of variable width. As split values are precomputed once per tree, the quantile approach is faster than the min/max histogram algorithm.</li>
+							<br>
+							<li>If, for a node deep in the tree, all feature values fall under a single bin, then no splitting can take place for that feature. A further optimization (supported with the quantile_per_tree Python option) is to compute the split values once per random forest, i.e., for the original non-bootstrapped dataset, rather than once per decision tree. </li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Random Forests - Parallel Execution -->
+				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+					<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+					<p style="font-size:25px;color: black;">Parallel Execution</p>
+					<ol style="font-size:20px;color: black;">
+						<li class="fragment">Initialize a bit mask indicating which samples are contained in each node.</li>
+						<br>
+						<li class="fragment">Initialize a "node map" indicating which nodes are present at each level.</li>
+						<br>
+						<li class="fragment">
+							ForEach(tree_level):
+							<ol style="font-size:18px;color: black;">
+								<li class="fragment">Find the node id of all data samples, using the bit mask.</li>
+								<li class="fragment">Compute the possible splits for all bins, all columns, and all nodes.</li>
+								<li class="fragment">Find the best split for each node.</li>
+								<li class="fragment">Update the bit mask and sparse node map to feed the next level.</li>
+							</ol>
+						</li>
+					</ol>
+				</section>
+
+				<!-- Random Forests - cuML implementation -->
+				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+					<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+					<p style="font-size:25px;color: black;">RAPIDS cuML implementation</p>
+					<pre style="width: 1000px"><code class="language-python" style="word-wrap:normal" data-line-numbers="1|3-8|10-11|13-14" data-trim>
+from cuML import RandomForestClassifier as cuRF
+
+cu_rf_params = {
+	'n_estimators': 25,
+	'max_depth': 13,
+	'n_bins': 15,
+	'n_streams': 8
+}
+
+cu_rf = cuRF(**cu_rf_params)
+cu_rf.fit(X_train, y_train)
+
+y_pred = cu_rf.predict(X_test)
+print("cuML RF Accuracy Score: ", accuracy_score(y_pred, y_test))
+					</code>
+					</pre>
+				</section>
+
+				
+
+				<!-- Random Forests Dask cuML implementation -->
+				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+					<p style="font-size:50px;color: #7306ff;">Random Forests</p>
+					<p style="font-size:25px;color: black;">Dask cuML implementation</p>
+					<pre style="width: 1000px"><code class="language-python" style="word-wrap:normal" data-line-numbers="1|3-8|10-11|13-14" data-trim>
+from cuml.dask.ensemble import RandomForestClassifier as cuRF_mg
+# cuml Random Forest params
+cu_rf_params = {
+	‘n_estimators’: 25,
+	‘max_depth’: 13,
+	‘n_bins’: 15,
+	‘n_streams’: 8
+}
+
+# Start by setting up the CUDA cluster on the local host 
+cluster = LocalCUDACluster(threads_per_worker=1, n_workers=n_workers)
+c = Client(cluster)
+workers = c.has_what().keys()
+
+# Shard the data across all workers
+X_train_df, y_train_df = dask_utils.persist_across_workers(c,[X_train_df,y_train_df],workers=workers)
+
+# Build and train the model
+cu_rf_mg = cuRFC_mg(**cu_rf_params)
+cu_rf_mg.fit(X_train_df, y_train_df)
+
+# Check the accuracy on a test set
+cu_rf_mg_predict = cu_rf_mg.predict(X_test)
+acc_score = accuracy_score(cu_rf_mg_predict, y_test, normalize=True)
+c.close()
+cluster.close()
+					</code>
+					</pre>
+				</section>
 				
 				<section data-markdown data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<script type="text/template">
-					  Main Content
+					  New Slide
 					</script>
 				</section>
 			
@@ -100,6 +301,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				slideNumber: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
