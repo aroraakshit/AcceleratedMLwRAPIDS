@@ -1,14 +1,28 @@
-![RAPIDS Logo](presentation/assets/imgs/rapids_logo.png) 
+<p align="center">
+  <a href="https://revealjs.com">
+  <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text.svg" alt="reveal.js" width="450">
+  </a>
+  <br><br>
+  <a href="https://github.com/hakimel/reveal.js/actions"><img src="https://github.com/hakimel/reveal.js/workflows/tests/badge.svg"></a>
+  <a href="https://slides.com/"><img src="https://s3.amazonaws.com/static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
+</p>
 
-# Accelerated Machine Learning with RAPIDS
+reveal.js is an open source HTML presentation framework. It enables anyone with a web browser to create fully featured and beautiful presentations for free. [Check out the live demo](https://revealjs.com/).
 
-Please find the presentation [here](https://AcceleratedMLwRAPIDS.github.io). RAPIDS homepage: [rapids.ai](https://rapids.ai/).
+The framework comes with a broad range of features including [nested slides](https://revealjs.com/vertical-slides/), [Markdown support](https://revealjs.com/markdown/), [Auto-Animate](https://revealjs.com/auto-animate/), [PDF export](https://revealjs.com/pdf-export/), [speaker notes](https://revealjs.com/speaker-view/), [LaTeX support](https://revealjs.com/math/), [syntax highlighted code](https://revealjs.com/code/) and much more.
 
-## Suggested Reading
+<h1>
+  <a href="https://revealjs.com/installation" style="font-size: 3em;">Get Started</a>
+</h1>
 
-- [Accelerating Random Forests up to 45x using cuml](https://medium.com/rapids-ai/accelerating-random-forests-up-to-45x-using-cuml-dfb782a31bea) by Vishal Mehta.
-- [RAPIDS Forest Inference Library: Prediction at 100 million rows per second](https://medium.com/rapids-ai/rapids-forest-inference-library-prediction-at-100-million-rows-per-second-19558890bc35) by John Zedlewski.
-- [RAPIDS HyperParameter Optimization](https://github.com/rapidsai/cloud-ml-examples).
-- [RAPIDS Overview](https://docs.rapids.ai/overview/latest.pdf).
-- [An Implementation and Explanation of the Random Forest in Python](https://towardsdatascience.com/an-implementation-and-explanation-of-the-random-forest-in-python-77bf308a9b76) by Will Koehrsen.
-- [Introduction to Random Forests](https://course18.fast.ai/lessonsml1/lesson1.html) by Fast.ai.
+## Documentation
+The full reveal.js documentation is available at [revealjs.com](https://revealjs.com).
+
+## Online Editor
+Want to create your presentation using a visual editor? Try the official reveal.js presentation platform for free at [Slides.com](https://slides.com). It's made by the same people behind reveal.js.
+
+## License
+
+MIT licensed
+
+Copyright (C) 2011-2020 Hakim El Hattab, https://hakim.se
