@@ -46,14 +46,14 @@
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">Speed, UX, and Iteration</p>
 					<p style="font-size:25px;color: black;">The Way to Win at Data Science</p>
-					<img width="700" src="assets/imgs/speed_ux_iteration.png">
+					<img width="1000" src="assets/imgs/speed_ux_iteration.png">
 				</section>
 
 				<!-- ML Lifecycle / Table of Contents -->
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">Machine Learning Lifecycle</p>
 					<p style="font-size:25px;color: black;">Also, Table of Contents</p>
-					<img width="700" src="assets/imgs/m_4_mll.png">
+					<img width="1000" src="assets/imgs/m_4_mll.png">
 				</section>
 				
 				<!-- Random Forests - Intuition -->
@@ -61,8 +61,8 @@
 					<p style="font-size:50px;color: #7306ff;">Random Forests</p>
 					<p style="font-size:25px;color: black;">Intuition</p>
 					<div class="r-stack">
-						<img class="fragment fade-out" width="300" src="assets/imgs/decision-tree.svg">
-						<img class="fragment" width="700" src="assets/imgs/random-forest.svg">
+						<img class="fragment fade-in-then-out" width="400" src="assets/imgs/decision-tree.svg">
+						<img class="fragment fade-in-then-out" width="700" src="assets/imgs/random-forest.svg">
 					</div>
 					<p style="font-size:10px"><a href="https://victorzhou.com/blog/intro-to-random-forests/">Random Forests for Complete Beginners</a></p>
 				</section>
@@ -99,10 +99,10 @@
 					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
 						<p style="font-size:25px;color: black;">Building a decision tree</p>
-						<ol style="font-size:20px;color: black;">
+						<ol style="font-size:22px;color: black;">
 							<li class="fragment">
 								Finding the best particular split at a particular node involves two choices:
-								<ol style="font-size:18px;color: black;">
+								<ol style="font-size:20px;color: black;">
 									<li>the feature</li>
 									<li>the split value for that feature</li>
 								</ol>
@@ -111,14 +111,14 @@
 							<br>
 							<li class="fragment">
 								At each node, the algorithm uses a specified metric to estimate how much a potential split will improve the model.
-								<ul style="font-size:18px;color: black;">
+								<ul style="font-size:20px;color: black;">
 									<li>Classification task: <b>Gini Impurity</b> or Entropy.</li>
-									<li>Regresion task: Mean Squared Error (MSE) or Mean Absolute Error (MAE)</li>
+									<li>Regression task: Mean Squared Error (MSE) or Mean Absolute Error (MAE)</li>
 								</ul>
 							</li>
 							<br>
 							<li class="fragment">Continue splitting the nodes until either:
-								<ol style="font-size:18px;color: black;">
+								<ol style="font-size:20px;color: black;">
 									<li>all values in the subset mapping to that node are pure (e.g. all fruits are strawberries)</li>
 									OR
 									<li>some other conditions are met (e.g. max tree depth, max number of samples per tree etc.)</li>
@@ -183,7 +183,7 @@ print("sklearn RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
 						<p style="font-size:25px;color: black;">Acceleration opportunities</p>
 						<img width="200" src="assets/imgs/RAPIDS404.gif">
-						<ol style="font-size:20px;color: black;">
+						<ol style="font-size:22px;color: black;">
 							<li class="fragment">Independent decision tree development. Several trees can be built in parallel on a single GPU.</li>
 							<br>
 							<li class="fragment">Breadth-first approach, as opposed to depth-first. Building a full layer of the tree at a time.</li>
@@ -219,7 +219,7 @@ print("sklearn RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 				</section>
 
 				<!-- Random Forests - Parallel Execution -->
-				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
+				<!-- <section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">Random Forests</p>
 					<p style="font-size:25px;color: black;">Parallel Execution</p>
 					<ol style="font-size:20px;color: black;">
@@ -237,7 +237,7 @@ print("sklearn RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 							</ol>
 						</li>
 					</ol>
-				</section>
+				</section> -->
 
 				<!-- Random Forests - cuML implementation -->
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
@@ -267,7 +267,7 @@ print("cuML RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
 						<p style="font-size:25px;color: black;">Results - Benchmark Details</p>
-						<ul style="font-size:20px;color: black;">
+						<ul style="font-size:22px;color: black;">
 							<li>
 								RAPIDS cuML version 0.10 (single V100 16 GB GPU; with cuDF) vs. sklearn version 0.21.2 (80 CPU threads; with numpy).
 							</li>
@@ -285,13 +285,13 @@ print("cuML RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
 						<p style="font-size:25px;color: black;">Results - Higgs Dataset</p>
-						<img width="700" src="assets/imgs/res_higgs.png">
+						<img width="850" src="assets/imgs/res_higgs.png">
 					</section>
 					<!-- Speedups - 3 -->
 					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 						<p style="font-size:50px;color: #7306ff;">Random Forests</p>
 						<p style="font-size:25px;color: black;">Results - Synthetic Dataset</p>
-						<img width="700" src="assets/imgs/res_synthetic.png">
+						<img width="850" src="assets/imgs/res_synthetic.png">
 					</section>
 				</section>
 
@@ -300,9 +300,9 @@ print("cuML RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 					<p style="font-size:50px;color: #7306ff;">Data Processing Evolution</p>
 					<p style="font-size:25px;color: black;">Faster Data Access, Less Data Movement</p>
 					<div class="r-stack">
-						<img class="fragment fade-in-then-out" width="700" src="assets/imgs/dpe_1.png">
-						<img class="fragment fade-in-then-out fade-up" width="700" src="assets/imgs/dpe_2.png">
-						<img class="fragment fade-in-then-out fade-up" width="700" src="assets/imgs/dpe_3.png">
+						<img class="fragment fade-in-then-out" width="1000" src="assets/imgs/dpe_1.png">
+						<img class="fragment fade-in-then-out fade-up" width="1000" src="assets/imgs/dpe_2.png">
+						<img class="fragment fade-in-then-out fade-up" width="1000" src="assets/imgs/dpe_3.png">
 					</div>
 				</section>
 				
@@ -311,8 +311,8 @@ print("cuML RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 					<p style="font-size:50px;color: #7306ff;">Data Movement and Transformation</p>
 					<p style="font-size:25px;color: black;">The Bane of Productivity and Performance</p>
 					<div class="r-stack">
-						<img class="fragment fade-in-then-out" width="700" src="assets/imgs/dmt_1.png">
-						<img class="fragment fade-in-then-out" width="700" src="assets/imgs/dmt_2.png">
+						<img class="fragment fade-in-then-out" width="1000" src="assets/imgs/dmt_1.png">
+						<img class="fragment fade-in-then-out" width="1000" src="assets/imgs/dmt_2.png">
 					</div>
 				</section>
 
@@ -320,8 +320,8 @@ print("cuML RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">Learning from Apache Arrow</p>
 					<div class="r-stack">
-						<img class="fragment fade-in-then-out" width="700" src="assets/imgs/laa_2.png">
-						<img class="fragment fade-in-then-out" width="700" src="assets/imgs/laa_3.png">
+						<img class="fragment fade-in-then-out" width="1000" src="assets/imgs/laa_2.png">
+						<img class="fragment fade-in-then-out" width="1000" src="assets/imgs/laa_3.png">
 					</div>
 				</section>
 
@@ -330,8 +330,8 @@ print("cuML RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 					<p style="font-size:50px;color: #7306ff;">Data Processing Evolution</p>
 					<p style="font-size:25px;color: black;">Faster Data Access, Less Data Movement</p>
 					<div class="r-stack">
-						<img class="fragment fade-in-then-out" width="700" src="assets/imgs/dpe_3.png">
-						<img class="fragment fade-in-then-out fade-up" width="700" src="assets/imgs/dpe_4.png">
+						<img class="fragment fade-in-then-out" width="1000" src="assets/imgs/dpe_3.png">
+						<img class="fragment fade-in-then-out fade-up" width="1000" src="assets/imgs/dpe_4.png">
 					</div>
 				</section>
 
@@ -339,14 +339,14 @@ print("cuML RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">Open Source Data Science Ecosystem</p>
 					<p style="font-size:25px;color: black;">Familiar Python APIs</p>
-					<img width="700" src="assets/imgs/cl_1.png">
+					<img width="1000" src="assets/imgs/cl_1.png">
 				</section>
 
 				<!-- RAPIDS Libraries -->
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">RAPIDS</p>
 					<p style="font-size:25px;color: black;">End-to-End GPU Accelerated Data Science</p>
-					<img width="700" src="assets/imgs/ra_1.png">
+					<img width="1000" src="assets/imgs/ra_1.png">
 				</section>
 
 				<!-- Random Forests cuDF implementation -->
@@ -382,11 +382,11 @@ print("cuML RF Accuracy Score: ", accuracy_score(y_pred, y_test))
 				<section>
 					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 						<p style="font-size:50px;color: #7306ff;">Why cuDF?</p>
-						<img width="700" src="assets/imgs/cudf_1.png">
+						<img width="1000" src="assets/imgs/cudf_1.png">
 					</section>
 					<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 						<p style="font-size:50px;color: #7306ff;">cuDF Benchmarks</p>
-						<img width="700" src="assets/imgs/cudf_2.png">
+						<img width="800" src="assets/imgs/cudf_2.png">
 					</section>
 				</section>
 
@@ -475,13 +475,13 @@ fil_preds = fm.predict(X_validation)
 				<!-- Hyper Parameter Optimization -->
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">Hyper Parameter Optimization w/ RAPIDS</p>
-					<img width="700" src="assets/imgs/rapids_hpo.png">
+					<img width="875" src="assets/imgs/rapids_hpo.png">
 				</section>
 
 				<!-- Summary -->
 				<section data-background-image="assets/imgs/another_bg_1.png" data-background="white">
 					<p style="font-size:50px;color: #7306ff;">Today we learned!</p>
-					<img width="700" src="assets/imgs/end-1.png">
+					<img width="1000" src="assets/imgs/end-1.png">
 				</section>
 				
 				<!-- <section data-markdown data-background-image="assets/imgs/another_bg_1.png" data-background="white">
