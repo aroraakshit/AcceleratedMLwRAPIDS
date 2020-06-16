@@ -16,5 +16,6 @@ Please find the presentation [here](https://aroraakshit.github.io/AcceleratedMLw
 - [RAPIDS Overview](https://docs.rapids.ai/overview/latest.pdf).
 - [An Implementation and Explanation of the Random Forest in Python](https://towardsdatascience.com/an-implementation-and-explanation-of-the-random-forest-in-python-77bf308a9b76) by Will Koehrsen.
 - [Introduction to Random Forests](https://course18.fast.ai/lessonsml1/lesson1.html) by Fast.ai.
+- [The Life of a Numba Kernel: A Compilation Pipeline Taking User Defined Functions in Python to CUDA Kernels](https://medium.com/rapids-ai/the-life-of-a-numba-kernel-a-compilation-pipeline-taking-user-defined-functions-in-python-to-cuda-71cc39b77625) by Graham Markall.
 
 <i>Email me: [akshita@nvidia.com](mailto:akshita@nvidia.com) / Follow me on Twitter: [@_AkshitArora](https://twitter.com/_AkshitArora)</i>
