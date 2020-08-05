@@ -7,6 +7,11 @@
 
 Presented at [AI Camp](https://learn.xnextcon.com/) in June 2020. Please find the presentation [here](https://aroraakshit.github.io/AcceleratedMLwRAPIDS/#/) and recorded talk [here](https://www.youtube.com/watch?v=fT0BVKx0c88). RAPIDS homepage: [rapids.ai](https://rapids.ai/).
 
+## Talk Description
+
+Data science demands the interactive exploration of large volumes of data, combined with computationally intensive algorithms and analytics. Today, the computational limits of CPUs are being realized, and a new approach is needed.
+In this talk, we will discuss how GPUs can enable data scientists to perform feature engineering and train machine learning models at scale using RAPIDS.
+
 ## Suggested Reading
 
 - [Accelerating Random Forests up to 45x using cuml](https://medium.com/rapids-ai/accelerating-random-forests-up-to-45x-using-cuml-dfb782a31bea) by Vishal Mehta.
