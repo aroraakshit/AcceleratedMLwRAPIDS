@@ -1,6 +1,6 @@
 <center>
 
-<img src="rapids_logo.png" width=200px>
+<img src="assets/rapids_logo.png" width=200px>
 
 # Accelerated Machine Learning with RAPIDS
 </center>
