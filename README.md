@@ -5,7 +5,7 @@
 # Accelerated Machine Learning with RAPIDS
 </center>
 
-Please find the presentation [here](https://aroraakshit.github.io/AcceleratedMLwRAPIDS/#/). RAPIDS homepage: [rapids.ai](https://rapids.ai/).
+Presented at [AI Camp](https://learn.xnextcon.com/) in June 2020. Please find the presentation [here](https://aroraakshit.github.io/AcceleratedMLwRAPIDS/#/). RAPIDS homepage: [rapids.ai](https://rapids.ai/).
 
 ## Suggested Reading
 
@@ -16,4 +16,4 @@ Please find the presentation [here](https://aroraakshit.github.io/AcceleratedMLw
 - [An Implementation and Explanation of the Random Forest in Python](https://towardsdatascience.com/an-implementation-and-explanation-of-the-random-forest-in-python-77bf308a9b76) by Will Koehrsen.
 - [Introduction to Random Forests](https://course18.fast.ai/lessonsml1/lesson1.html) by Fast.ai.
 
-<i>Email me: [akshita@nvidia.com](mailto:akshita@nvidia.com) / Follow me on Twitter: [@_AkshitArora](https://twitter.com/_AkshitArora)</i>
+<i>Website: [aroraakshit.github.io](http://aroraakshit.github.io/) / Email me: [akshita@nvidia.com](mailto:akshita@nvidia.com) / Follow me on Twitter: [@_AkshitArora](https://twitter.com/_AkshitArora)</i>
